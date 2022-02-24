@@ -4,14 +4,22 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="src/style.css" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
       rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap@4.4.1/dist/css/bootstrap.min.css"
-      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+    />
+    <title>Weather app</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
-    <title>Vanilla Weather App</title>
+    <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <div class="container">
@@ -21,7 +29,7 @@
         <div class="col-4 weather-app">
           <div class="row">
             <div class="col-7 type-city">
-              <form class="type-city-input">
+              <form class="type-city-input" id="search-form">
                 <input
                   id="city-input"
                   type="text"
@@ -34,62 +42,93 @@
               </form>
               <hr class="rule" />
             </div>
-            <div class="col-1 location-arrow">
-              <img src="images/location-arrow.svg" width="27" />
+
+            <div class="col-1">
+              <button class="button location-arrow" id="current-location">
+                <img src="images/location-arrow.svg" width="27" />
+              </button>
             </div>
-            <div class="col-4 date-hour">
-              <strong> Thu Feb 24 </strong> <br />
-              20:50
+            <div class="col-4 date-hour" id="date">
+              <strong> Fri Feb 25</strong> <br />
+              00:15
+            </div>
+
+            <div class="col city-name" id="city">LONDON</div>
+          </div>
+          <div class="col weather-icon">
+            <img
+              class="weather-icon"
+              src="images/sunny.svg"
+              alt="sunny"
+              width="270"
+            />
+          </div>
+
+          <div class="row">
+            <div class="col-8 day-temp" id="temperature">29°</div>
+            <div class="col-4 c-f">
+              <button id="celsius-link">°C</button>
+              | <button id="farenheit-link">°F</button>
             </div>
           </div>
-          <div class="row">
-            <div class="col-12 city-name">LONDON</div>
-          </div>
-          <div class="row">
-            <div class="col-12 weather-icon">
-              <img src="images/sunny.svg" alt="sunny" width="250" />
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-6 temperature">29°</div>
-            <div class="col-6 celsius-farenheit">C | °F</div>
-          </div>
+
           <hr class="rule" />
-
           <div class="row">
-            <div class="col-12 weather-description">Clear and Sunny</div>
-          </div>
-          <div class="row">
-            <div class="col-6 high-low">
-              Highest <strong>8°</strong> <br />
-              Lowest <strong>7°</strong>
-            </div>
-            <div class="col-6 humidity-wind">
-              Humidity <strong>69%</strong> <br />
-              Wind <strong>7km/h</strong>
+            <div class="col description" id="weather-description">
+              Clear and Sunny
             </div>
           </div>
-
+          <div class="row extra-datas">
+            <div class="col-6">
+              Highest <strong id="highest">35°</strong> <br />
+              Lowest <strong id="lowest">22°</strong> <br />
+            </div>
+            <div class="col-6">
+              Humidity <strong id="humidity">0 %</strong><br />
+              Wind <strong id="windspeed">4 km/h </strong>
+            </div>
+          </div>
           <hr class="rule" />
 
           <div class="row forecast-days">
+            <div class="col-3">THU</div>
             <div class="col-3">FRI</div>
             <div class="col-3">SAT</div>
             <div class="col-3">SUN</div>
-            <div class="col-3">MON</div>
           </div>
+
           <div class="row forecast-icons">
             <div class="col-3">
-              <img src="images/sunny.svg" alt="sunny" width="25" />
+              <img
+                class="weather-icon"
+                src="images/sunny.svg"
+                alt="sunny"
+                width="25"
+              />
             </div>
             <div class="col-3">
-              <img src="images/sunny.svg" alt="sunny" width="25" />
+              <img
+                class="weather-icon"
+                src="images/sunny.svg"
+                alt="sunny"
+                width="25"
+              />
             </div>
             <div class="col-3">
-              <img src="images/sunny.svg" alt="sunny" width="25" />
+              <img
+                class="weather-icon"
+                src="images/sunny.svg"
+                alt="sunny"
+                width="25"
+              />
             </div>
             <div class="col-3">
-              <img src="images/sunny.svg" alt="sunny" width="25" />
+              <img
+                class="weather-icon"
+                src="images/sunny.svg"
+                alt="sunny"
+                width="25"
+              />
             </div>
           </div>
           <div class="row forecast-high-low">
@@ -98,17 +137,15 @@
             <div class="col-3">17° | <strong>28°</strong></div>
             <div class="col-3">18° | <strong>26°</strong></div>
           </div>
-          <small>
-            <a
-              href="https://github.com/debriks/vanilla-weather-app"
-              target="_blank"
-              >Open-source code</a
-            >
-            by Deborah Robbiano 2022</small
-          >
         </div>
       </div>
+      <p>
+        <a href="https://github.com/debriks/weather-app" target="_blank"
+          >Open-source code</a
+        >
+        by Deborah Robbiano 2022
+      </p>
     </div>
-    <script src="src/app.js"></script>
+    <script src="src/script.js"></script>
   </body>
 </html>
