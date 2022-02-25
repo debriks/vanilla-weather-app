@@ -19,6 +19,9 @@
       integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
       crossorigin="anonymous"
     />
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
@@ -52,7 +55,7 @@
                 00:15
               </div>
 
-              <div class="col city-name" id="city">LONDON</div>
+              <div class="col city-name" id="city"></div>
             </div>
             <div class="col weather-icon">
               <img
@@ -64,7 +67,7 @@
             </div>
 
             <div class="row">
-              <div class="col-8 day-temp" id="temperature">29°</div>
+              <div class="col-8 day-temp" id="temperature"></div>
               <div class="col-4 c-f">
                 <button id="celsius-link">°C</button>
                 | <button id="farenheit-link">°F</button>
@@ -146,6 +149,6 @@
         </div>
       </div>
     </div>
-    <script src="src/script.js"></script>
+    <script src="src/app.js"></script>
   </body>
 </html>
