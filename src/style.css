@@ -1,3 +1,7 @@
+body {
+  font-family: "Raleway", sans-serif;
+}
+
 input {
   border-width: 0;
   border-style: none;
@@ -10,23 +14,22 @@ input {
   text-transform: uppercase;
   padding-top: 10px;
 }
+
 button {
   border: none;
   background: transparent;
 }
 
 p {
-  font-family: "Raleway", sans-serif;
   font-size: 12px;
   font-weight: 500;
   line-height: 18px;
   text-align: center;
   position: relative;
-  left: -30px;
   padding-top: 15px;
 }
+
 a {
-  font-family: "Raleway", sans-serif;
   text-decoration: none;
   color: black;
   font-weight: 700;
@@ -34,6 +37,25 @@ a {
 
 a:hover {
   color: #662eed;
+}
+
+.weather-app-wrapper {
+  margin-top: 50px;
+}
+
+.weather-app {
+  width: 380px;
+  background: linear-gradient(
+    0deg,
+    rgb(247, 247, 247) 23.8%,
+    rgb(253, 205, 233) 92%
+  );
+
+  border: 1px solid rgb(247, 206, 243);
+  border-radius: 25px;
+  padding: 20px;
+  display: block;
+  margin: 0 auto;
 }
 
 .rule {
@@ -49,20 +71,6 @@ a:hover {
   padding: 5px;
 }
 
-.weather-app {
-  margin-top: 50px;
-  background: linear-gradient(
-    0deg,
-    rgb(247, 247, 247) 23.8%,
-    rgb(253, 205, 233) 92%
-  );
-
-  border: 1px solid rgb(247, 206, 243);
-  border-radius: 25px;
-  width: 380px;
-  padding: 20px;
-}
-
 .location-arrow {
   background: transparent;
   position: relative;
@@ -74,7 +82,6 @@ a:hover {
 }
 
 .date-hour {
-  font-family: "Raleway", sans-serif;
   font-size: 15px;
   line-height: 15px;
   text-align: right;
@@ -86,7 +93,6 @@ a:hover {
   text-align: center;
   text-transform: uppercase;
   font-size: 35px;
-  font-family: "Raleway", sans-serif;
   font-weight: 200;
   padding: 30px 0 15px;
   margin-bottom: 20px;
@@ -99,7 +105,6 @@ a:hover {
   margin: 0 auto;
 }
 .day-temp {
-  font-family: "Raleway", sans-serif;
   font-size: 90px;
   font-weight: 700;
   position: relative;
@@ -107,7 +112,6 @@ a:hover {
 }
 
 .c-f {
-  font-family: "Raleway", sans-serif;
   font-size: 25px;
   font-weight: 300;
   text-align: right;
@@ -116,12 +120,10 @@ a:hover {
 }
 
 .description {
-  font-family: "Raleway", sans-serif;
   font-size: 25px;
   font-weight: 300;
 }
 .extra-datas {
-  font-family: "Raleway", sans-serif;
   font-size: 13px;
   line-height: 18px;
   font-weight: 400;
@@ -129,7 +131,6 @@ a:hover {
 }
 
 .forecast-days {
-  font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 500;
   text-align: center;
@@ -146,7 +147,6 @@ a:hover {
 }
 
 .forecast-high-low {
-  font-family: "Raleway", sans-serif;
   font-size: 14px;
   font-weight: 500;
   text-align: center;

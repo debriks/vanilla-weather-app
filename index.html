@@ -24,127 +24,127 @@
   <body>
     <div class="container">
       <div class="row">
-        <div class="col-4"></div>
+        <div class="weather-app-wrapper">
+          <div class="col-4 weather-app">
+            <div class="row">
+              <div class="col-7 type-city">
+                <form class="type-city-input" id="search-form">
+                  <input
+                    id="city-input"
+                    type="text"
+                    placeholder="Type city"
+                    autofocus="on"
+                    autocomplete="off"
+                    type="submit"
+                    required
+                  />
+                </form>
+                <hr class="rule" />
+              </div>
 
-        <div class="col-4 weather-app">
-          <div class="row">
-            <div class="col-7 type-city">
-              <form class="type-city-input" id="search-form">
-                <input
-                  id="city-input"
-                  type="text"
-                  placeholder="Type city"
-                  autofocus="on"
-                  autocomplete="off"
-                  type="submit"
-                  required
+              <div class="col-1">
+                <button class="button location-arrow" id="current-location">
+                  <img src="images/location-arrow.svg" width="27" />
+                </button>
+              </div>
+              <div class="col-4 date-hour" id="date">
+                <strong> Fri Feb 25</strong> <br />
+                00:15
+              </div>
+
+              <div class="col city-name" id="city">LONDON</div>
+            </div>
+            <div class="col weather-icon">
+              <img
+                class="weather-icon"
+                src="images/sunny.svg"
+                alt="sunny"
+                width="270"
+              />
+            </div>
+
+            <div class="row">
+              <div class="col-8 day-temp" id="temperature">29°</div>
+              <div class="col-4 c-f">
+                <button id="celsius-link">°C</button>
+                | <button id="farenheit-link">°F</button>
+              </div>
+            </div>
+
+            <hr class="rule" />
+            <div class="row">
+              <div class="col description" id="weather-description">
+                Clear and Sunny
+              </div>
+            </div>
+            <div class="row extra-datas">
+              <div class="col-6">
+                Highest <strong id="highest">35°</strong> <br />
+                Lowest <strong id="lowest">22°</strong> <br />
+              </div>
+              <div class="col-6">
+                Humidity <strong id="humidity">0 %</strong><br />
+                Wind <strong id="windspeed">4 km/h </strong>
+              </div>
+            </div>
+            <hr class="rule" />
+
+            <div class="row forecast-days">
+              <div class="col-3">THU</div>
+              <div class="col-3">FRI</div>
+              <div class="col-3">SAT</div>
+              <div class="col-3">SUN</div>
+            </div>
+
+            <div class="row forecast-icons">
+              <div class="col-3">
+                <img
+                  class="weather-icon"
+                  src="images/sunny.svg"
+                  alt="sunny"
+                  width="25"
                 />
-              </form>
-              <hr class="rule" />
+              </div>
+              <div class="col-3">
+                <img
+                  class="weather-icon"
+                  src="images/sunny.svg"
+                  alt="sunny"
+                  width="25"
+                />
+              </div>
+              <div class="col-3">
+                <img
+                  class="weather-icon"
+                  src="images/sunny.svg"
+                  alt="sunny"
+                  width="25"
+                />
+              </div>
+              <div class="col-3">
+                <img
+                  class="weather-icon"
+                  src="images/sunny.svg"
+                  alt="sunny"
+                  width="25"
+                />
+              </div>
             </div>
-
-            <div class="col-1">
-              <button class="button location-arrow" id="current-location">
-                <img src="images/location-arrow.svg" width="27" />
-              </button>
-            </div>
-            <div class="col-4 date-hour" id="date">
-              <strong> Fri Feb 25</strong> <br />
-              00:15
-            </div>
-
-            <div class="col city-name" id="city">LONDON</div>
-          </div>
-          <div class="col weather-icon">
-            <img
-              class="weather-icon"
-              src="images/sunny.svg"
-              alt="sunny"
-              width="270"
-            />
-          </div>
-
-          <div class="row">
-            <div class="col-8 day-temp" id="temperature">29°</div>
-            <div class="col-4 c-f">
-              <button id="celsius-link">°C</button>
-              | <button id="farenheit-link">°F</button>
-            </div>
-          </div>
-
-          <hr class="rule" />
-          <div class="row">
-            <div class="col description" id="weather-description">
-              Clear and Sunny
+            <div class="row forecast-high-low">
+              <div class="col-3">18° | <strong>27°</strong></div>
+              <div class="col-3">20° | <strong>29°</strong></div>
+              <div class="col-3">17° | <strong>28°</strong></div>
+              <div class="col-3">18° | <strong>26°</strong></div>
             </div>
           </div>
-          <div class="row extra-datas">
-            <div class="col-6">
-              Highest <strong id="highest">35°</strong> <br />
-              Lowest <strong id="lowest">22°</strong> <br />
-            </div>
-            <div class="col-6">
-              Humidity <strong id="humidity">0 %</strong><br />
-              Wind <strong id="windspeed">4 km/h </strong>
-            </div>
-          </div>
-          <hr class="rule" />
-
-          <div class="row forecast-days">
-            <div class="col-3">THU</div>
-            <div class="col-3">FRI</div>
-            <div class="col-3">SAT</div>
-            <div class="col-3">SUN</div>
-          </div>
-
-          <div class="row forecast-icons">
-            <div class="col-3">
-              <img
-                class="weather-icon"
-                src="images/sunny.svg"
-                alt="sunny"
-                width="25"
-              />
-            </div>
-            <div class="col-3">
-              <img
-                class="weather-icon"
-                src="images/sunny.svg"
-                alt="sunny"
-                width="25"
-              />
-            </div>
-            <div class="col-3">
-              <img
-                class="weather-icon"
-                src="images/sunny.svg"
-                alt="sunny"
-                width="25"
-              />
-            </div>
-            <div class="col-3">
-              <img
-                class="weather-icon"
-                src="images/sunny.svg"
-                alt="sunny"
-                width="25"
-              />
-            </div>
-          </div>
-          <div class="row forecast-high-low">
-            <div class="col-3">18° | <strong>27°</strong></div>
-            <div class="col-3">20° | <strong>29°</strong></div>
-            <div class="col-3">17° | <strong>28°</strong></div>
-            <div class="col-3">18° | <strong>26°</strong></div>
-          </div>
+          <p>
+            <a href="https://github.com/debriks/weather-app" target="_blank"
+              >Open-source code</a
+            >
+            by Deborah Robbiano 2022
+          </p>
         </div>
       </div>
-      <p>
-        <a href="https://github.com/debriks/weather-app" target="_blank"
-          >Open-source code</a
-        >
-        by Deborah Robbiano 2022
-      </p>
     </div>
     <script src="src/script.js"></script>
   </body>
