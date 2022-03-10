@@ -82,8 +82,9 @@ a:hover {
 }
 
 .date-hour {
-  font-size: 15px;
+  font-size: 14px;
   line-height: 15px;
+  font-weight: 400;
   text-align: right;
   position: relative;
   top: 8px;
@@ -122,8 +123,12 @@ a:hover {
 .description {
   font-size: 25px;
   font-weight: 300;
-  text-transform: capitalize;
 }
+
+.description::first-letter {
+text-transform: capitalize;
+}
+
 .extra-datas {
   font-size: 13px;
   line-height: 18px;
