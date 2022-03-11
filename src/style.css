@@ -18,6 +18,8 @@ input {
 button {
   border: none;
   background: transparent;
+  font-weight: 300;
+
 }
 
 p {
@@ -45,12 +47,7 @@ a:hover {
 
 .weather-app {
   width: 380px;
-  background: linear-gradient(
-    0deg,
-    rgb(247, 247, 247) 23.8%,
-    rgb(253, 205, 233) 92%
-  );
-
+  background: linear-gradient(150deg, rgb(253, 136, 181) 10%, rgb(252, 227, 213) 80%);
   border: 1px solid rgb(247, 206, 243);
   border-radius: 25px;
   padding: 20px;

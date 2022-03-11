@@ -24,7 +24,7 @@ function formatDate(timestamp) {
     "Jan",
     "Feb",
     "Mar",
-    "Apr",
+    "Apr", 
     "May",
     "Jun",
     "Jul",
@@ -39,7 +39,7 @@ function formatDate(timestamp) {
   let currentDate = date.getDate();
 
 
-  return `${day}, ${month} ${currentDate} <br/> ${hours}:${minutes}`;
+  return `<strong> ${day}, ${month} ${currentDate} </strong> <br/> ${hours}:${minutes}`;
 }
 
 
@@ -68,11 +68,21 @@ function displayTemperature(response) {
   windElement.innerHTML = `${windSpeed} km/h`;
   let dateElement = document.querySelector("#date");
   dateElement.innerHTML = formatDate(response.data.dt * 1000);
+  let currentWeatherIcon = document.querySelector("#current-weather-icon");
+
+  currentWeatherIcon.setAttribute(
+    "src",
+    `images/${response.data.weather[0].icon}.svg`
+  );
+
+  currentWeatherIcon.setAttribute("alt", response.data.weather[0].description);
+
   
 }
 
 let apiKey = "fd4ffa3dde63cf28819767f2d6c16744";
+let city = "reykjavik";
 let units = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=New%20York&appid=${apiKey}&units=${units}`;
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
 
 axios.get(apiUrl).then(displayTemperature);
