@@ -44,31 +44,32 @@ function formatDate(timestamp) {
 
 
 
-
-
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
   let temperature = Math.round(response.data.main.temp);
-  temperatureElement.innerHTML = `${temperature}°`;
   let cityElement = document.querySelector("#city");
-  cityElement.innerHTML = response.data.name;
   let descriptionElement = document.querySelector("#weather-description");
-  descriptionElement.innerHTML = response.data.weather[0].description;
   let highTempElement = document.querySelector("#highest");
   let highTemp = Math.round(response.data.main.temp_max);
-  highTempElement.innerHTML = `${highTemp}°`;
   let lowTempElement = document.querySelector("#lowest");
   let lowTemp = Math.round(response.data.main.temp_min);
-  lowTempElement.innerHTML = `${lowTemp}°`;
   let humidityElement = document.querySelector("#humidity");
   let humidity = response.data.main.humidity;
-  humidityElement.innerHTML = `${humidity}%`;
   let windElement = document.querySelector("#windspeed");
   let windSpeed = Math.round(response.data.wind.speed);
-  windElement.innerHTML = `${windSpeed} km/h`;
   let dateElement = document.querySelector("#date");
-  dateElement.innerHTML = formatDate(response.data.dt * 1000);
   let currentWeatherIcon = document.querySelector("#current-weather-icon");
+
+  celsiusTemp = Math.round(response.data.main.temp);
+
+  temperatureElement.innerHTML = `${celsiusTemp}°`;
+  cityElement.innerHTML = response.data.name;
+  descriptionElement.innerHTML = response.data.weather[0].description;
+  highTempElement.innerHTML = `${highTemp}°`;
+  lowTempElement.innerHTML = `${lowTemp}°`;
+  humidityElement.innerHTML = `${humidity}%`;
+  windElement.innerHTML = `${windSpeed} km/h`;
+  dateElement.innerHTML = formatDate(response.data.dt * 1000);
 
   currentWeatherIcon.setAttribute(
     "src",
@@ -87,7 +88,6 @@ function search(city) {
 
 }
 
-search("New York");
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -98,6 +98,34 @@ function handleSubmit(event) {
   cityInputElement.value = "";
 }
 
+function displayFahrenheitTemp(event) {
+  event.preventDefault();
+  let fahrenheitTemp = Math.round((celsiusTemp * 9/5) + 32);
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusBtn.classList.remove("active");
+  fahrenheitBtn.classList.add("active");
+  temperatureElement.innerHTML = `${fahrenheitTemp}°`;
+}
+
+function displayCelsiusTemp(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
+  celsiusBtn.classList.add("active");
+  fahrenheitBtn.classList.remove("active");
+  temperatureElement.innerHTML = `${celsiusTemp}°`;
+}
+
+let celsiusTemp = null;
 
 let searchCity = document.querySelector("#search-form");
 searchCity.addEventListener("submit", handleSubmit);
+
+
+let fahrenheitBtn = document.querySelector("#fahrenheit-btn");
+fahrenheitBtn.addEventListener("click", displayFahrenheitTemp);
+
+let celsiusBtn = document.querySelector("#celsius-btn");
+celsiusBtn.addEventListener("click", displayCelsiusTemp);
+
+
+search("New York");

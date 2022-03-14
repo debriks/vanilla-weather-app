@@ -117,6 +117,10 @@ a:hover {
   top: 95px;
 }
 
+.c-f .active {
+  font-weight: 700;
+}
+
 .description {
   font-size: 25px;
   font-weight: 300;
