@@ -76,13 +76,28 @@ function displayTemperature(response) {
   );
 
   currentWeatherIcon.setAttribute("alt", response.data.weather[0].description);
-
-  
 }
 
-let apiKey = "fd4ffa3dde63cf28819767f2d6c16744";
-let city = "reykjavik";
-let units = "metric";
-let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+function search(city) {
+  let apiKey = "fd4ffa3dde63cf28819767f2d6c16744";
+  let units = "metric";
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
+  
+  axios.get(apiUrl).then(displayTemperature);
 
-axios.get(apiUrl).then(displayTemperature);
+}
+
+search("New York");
+
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#city");
+  let cityInputElement = document.querySelector("#city-input");
+  city.innerHTML = cityInputElement.value;
+  search(cityInputElement.value);
+  cityInputElement.value = "";
+}
+
+
+let searchCity = document.querySelector("#search-form");
+searchCity.addEventListener("submit", handleSubmit);

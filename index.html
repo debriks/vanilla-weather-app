@@ -31,14 +31,15 @@
           <div class="col-4 weather-app">
             <div class="row">
               <div class="col-7 type-city">
-                <form class="type-city-input" id="search-form">
+                <form name="search-form" class="type-city-input" id="search-form">
                   <input
                     id="city-input"
                     type="text"
                     placeholder="Type city"
                     autofocus="on"
                     autocomplete="off"
-                    type="submit"
+                    type="search"
+                    onclick="submitForm()"
                     required
                   />
                 </form>
