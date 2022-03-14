@@ -9,22 +9,14 @@ function formatDate(timestamp) {
     minutes = `0${minutes}`;
   }
 
-  let days = [
-    "Sun",
-    "Mon",
-    "Tue",
-    "Wed",
-    "Thu",
-    "Fri",
-    "Sat",
-  ];
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
   let day = days[date.getDay()];
 
   let months = [
     "Jan",
     "Feb",
     "Mar",
-    "Apr", 
+    "Apr",
     "May",
     "Jun",
     "Jul",
@@ -38,11 +30,36 @@ function formatDate(timestamp) {
 
   let currentDate = date.getDate();
 
-
   return `<strong> ${day}, ${month} ${currentDate} </strong> <br/> ${hours}:${minutes}`;
 }
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast");
+  let days = ["Thu", "Fri", "Sat", "Sun"];
 
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+    <div class="col-3">
+      <div class="forecast-day">${day}</div>
+        <img
+        class="forecast-icon"
+        src="images/01d.svg"
+        alt="sunny"
+        width="25"
+        />
+      <div class="forecast-high-low">
+        18° | <strong>27°</strong>
+      </div>
+    </div>
+ `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
 
 function displayTemperature(response) {
   let temperatureElement = document.querySelector("#temperature");
@@ -83,11 +100,9 @@ function search(city) {
   let apiKey = "fd4ffa3dde63cf28819767f2d6c16744";
   let units = "metric";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-  
+
   axios.get(apiUrl).then(displayTemperature);
-
 }
-
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -100,7 +115,7 @@ function handleSubmit(event) {
 
 function displayFahrenheitTemp(event) {
   event.preventDefault();
-  let fahrenheitTemp = Math.round((celsiusTemp * 9/5) + 32);
+  let fahrenheitTemp = Math.round((celsiusTemp * 9) / 5 + 32);
   let temperatureElement = document.querySelector("#temperature");
   celsiusBtn.classList.remove("active");
   fahrenheitBtn.classList.add("active");
@@ -120,12 +135,11 @@ let celsiusTemp = null;
 let searchCity = document.querySelector("#search-form");
 searchCity.addEventListener("submit", handleSubmit);
 
-
 let fahrenheitBtn = document.querySelector("#fahrenheit-btn");
 fahrenheitBtn.addEventListener("click", displayFahrenheitTemp);
 
 let celsiusBtn = document.querySelector("#celsius-btn");
 celsiusBtn.addEventListener("click", displayCelsiusTemp);
 
-
 search("New York");
+displayForecast();

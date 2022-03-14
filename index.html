@@ -31,7 +31,11 @@
           <div class="col-4 weather-app">
             <div class="row">
               <div class="col-7 type-city">
-                <form name="search-form" class="type-city-input" id="search-form">
+                <form
+                  name="search-form"
+                  class="type-city-input"
+                  id="search-form"
+                >
                   <input
                     id="city-input"
                     type="text"
@@ -50,8 +54,7 @@
                   <img src="images/location-arrow.svg" width="27" />
                 </button>
               </div>
-              <div class="col-4 date-hour" id="date">
-              </div>
+              <div class="col-4 date-hour" id="date"></div>
 
               <div class="col city-name" id="city"></div>
             </div>
@@ -91,53 +94,7 @@
             </div>
             <hr class="rule" />
 
-            <div class="row forecast-days">
-              <div class="col-3">THU</div>
-              <div class="col-3">FRI</div>
-              <div class="col-3">SAT</div>
-              <div class="col-3">SUN</div>
-            </div>
-
-            <div class="row forecast-icons">
-              <div class="col-3">
-                <img
-                  class="weather-icon"
-                  src="images/01d.svg"
-                  alt="sunny"
-                  width="25"
-                />
-              </div>
-              <div class="col-3">
-                <img
-                  class="weather-icon"
-                  src="images/01d.svg"
-                  alt="sunny"
-                  width="25"
-                />
-              </div>
-              <div class="col-3">
-                <img
-                  class="weather-icon"
-                  src="images/01d.svg"
-                  alt="sunny"
-                  width="25"
-                />
-              </div>
-              <div class="col-3">
-                <img
-                  class="weather-icon"
-                  src="images/01d.svg"
-                  alt="sunny"
-                  width="25"
-                />
-              </div>
-            </div>
-            <div class="row forecast-high-low">
-              <div class="col-3">18° | <strong>27°</strong></div>
-              <div class="col-3">20° | <strong>29°</strong></div>
-              <div class="col-3">17° | <strong>28°</strong></div>
-              <div class="col-3">18° | <strong>26°</strong></div>
-            </div>
+            <div class="weather-forecast" id="forecast"></div>
           </div>
           <p>
             <a href="https://github.com/debriks/weather-app" target="_blank"

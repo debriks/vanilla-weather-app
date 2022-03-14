@@ -19,7 +19,6 @@ button {
   border: none;
   background: transparent;
   font-weight: 300;
-
 }
 
 p {
@@ -47,7 +46,11 @@ a:hover {
 
 .weather-app {
   width: 380px;
-  background: linear-gradient(150deg, rgb(253, 136, 181) 10%, rgb(252, 227, 213) 80%);
+  background: linear-gradient(
+    150deg,
+    rgb(253, 136, 181) 10%,
+    rgb(252, 227, 213) 80%
+  );
   border: 1px solid rgb(247, 206, 243);
   border-radius: 25px;
   padding: 20px;
@@ -127,7 +130,7 @@ a:hover {
 }
 
 .description::first-letter {
-text-transform: capitalize;
+  text-transform: capitalize;
 }
 
 .extra-datas {
@@ -137,7 +140,7 @@ text-transform: capitalize;
   margin-bottom: 5px;
 }
 
-.forecast-days {
+.forecast-day {
   font-size: 14px;
   font-weight: 500;
   text-align: center;
@@ -146,11 +149,13 @@ text-transform: capitalize;
   padding: 0;
 }
 
-.forecast-icons {
+.forecast-icon {
   position: relative;
   top: 6px;
   margin-top: 0;
   padding: 0;
+  display: block;
+  margin: 0 auto;
 }
 
 .forecast-high-low {
