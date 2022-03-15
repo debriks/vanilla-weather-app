@@ -131,6 +131,8 @@ function handleSubmit(event) {
   city.innerHTML = cityInputElement.value;
   search(cityInputElement.value);
   cityInputElement.value = "";
+  celsiusBtn.classList.add("active");
+  fahrenheitBtn.classList.remove("active");
 }
 
 function displayFahrenheitTemp(event) {
