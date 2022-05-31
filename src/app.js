@@ -57,7 +57,7 @@ function displayForecast(response) {
         class="forecast-icon"
         src="/images/${forecastDay.weather[0].icon}.svg"
         alt="sunny"
-        width="5 !important"
+        width="25"
         />
       <div class="forecast-high-low">
       ${Math.round(forecastDay.temp.min)}° | <strong>${Math.round(
