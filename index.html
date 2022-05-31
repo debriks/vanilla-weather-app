@@ -22,15 +22,20 @@
 
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 
+    <meta
+      name="description"
+      content="Weather App in Farenheit and Celsius temperature"
+    />
+
     <link rel="stylesheet" href="src/style.css" />
   </head>
   <body>
     <div class="container">
       <div class="row">
         <div class="weather-app-wrapper">
-          <div class="col-4 weather-app">
+          <div class="col-md-6 weather-app">
             <div class="row">
-              <div class="col-8 type-city">
+              <div class="col-md-7 type-city">
                 <form
                   name="search-form"
                   class="type-city-input"
@@ -48,11 +53,11 @@
                 </form>
                 <hr class="rule" />
               </div>
-              <div class="col-4 date-hour" id="date"></div>
+              <div class="col-md-5 date-hour" id="date"></div>
 
-              <div class="col city-name" id="city"></div>
+              <div class="col-md-12 city-name" id="city"></div>
             </div>
-            <div class="col weather-icon">
+            <div class="col-md-12 weather-icon">
               <img
                 class="weather-icon"
                 id="current-weather-icon"
@@ -63,8 +68,8 @@
             </div>
 
             <div class="row">
-              <div class="col-8 day-temp" id="temperature"></div>
-              <div class="col-4 c-f">
+              <div class="col-md-8 day-temp" id="temperature"></div>
+              <div class="col-md-4 c-f">
                 <button id="celsius-btn" class="active">°C</button>
                 | <button id="fahrenheit-btn">°F</button>
               </div>
@@ -77,11 +82,11 @@
               </div>
             </div>
             <div class="row extra-datas">
-              <div class="col-6">
+              <div class="col-md-6">
                 Highest <strong id="highest">35°</strong> <br />
                 Lowest <strong id="lowest">22°</strong> <br />
               </div>
-              <div class="col-6">
+              <div class="col-md-6">
                 Humidity <strong id="humidity">0 %</strong><br />
                 Wind <strong id="windspeed">4 km/h </strong>
               </div>

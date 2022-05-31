@@ -114,6 +114,7 @@ function displayTemperature(response) {
   currentWeatherIcon.setAttribute("alt", response.data.weather[0].description);
 
   getForecast(response.data.coord);
+  console.log(response.data.weather[0].icon);
 }
 
 function search(city) {

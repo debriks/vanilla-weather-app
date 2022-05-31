@@ -71,16 +71,6 @@ a:hover {
   padding: 5px;
 }
 
-.location-arrow {
-  background: transparent;
-  position: relative;
-  top: 10px;
-}
-
-.location-arrow:hover {
-  cursor: pointer;
-}
-
 .date-hour {
   font-size: 14px;
   line-height: 15px;
@@ -164,4 +154,56 @@ a:hover {
   text-align: center;
   margin-top: 10px;
   padding: 0;
+}
+
+@media (max-width: 600px) {
+  body {
+    background: linear-gradient(
+      150deg,
+      rgb(253, 136, 181) 10%,
+      rgb(252, 227, 213) 80%
+    );
+  }
+
+  div {
+    margin: 0px !important;
+  }
+
+  input {
+    font-size: 20px;
+    font-weight: 400;
+  }
+
+  .container {
+    height: 100vh;
+    overflow-x: hidden;
+  }
+
+  .weather-app {
+    border: none;
+  }
+
+  .row {
+    margin-left: 0 !important;
+  }
+
+  .container {
+    height: 100vh;
+  }
+
+  .type-city {
+    margin-left: -45px !important;
+    margin-top: -15px !important;
+    margin-right: 25px !important;
+    padding-right: 0px;
+    font-size: 12px;
+  }
+
+  .date-hour {
+    padding-left: 0px !important;
+  }
+
+  #date {
+    padding-left: 0px;
+  }
 }
