@@ -2,6 +2,10 @@ body {
   font-family: "Raleway", sans-serif;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 input {
   border-width: 0;
   border-style: none;
@@ -95,6 +99,7 @@ a:hover {
   display: block;
   margin: 0 auto;
 }
+
 .day-temp {
   font-size: 90px;
   font-weight: 700;
@@ -163,6 +168,7 @@ a:hover {
       rgb(253, 136, 181) 10%,
       rgb(252, 227, 213) 80%
     );
+    height: 100vh;
   }
 
   div {
@@ -170,33 +176,49 @@ a:hover {
   }
 
   input {
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 400;
+  }
+
+  img {
+    width: 300px !important;
+  }
+
+  .col-md-12 {
+    margin: 0 !important;
+  }
+
+  .rule {
+    padding: 0;
+    margin-right: 0;
   }
 
   .container {
     height: 100vh;
     overflow-x: hidden;
+    padding: 0 20px 0 20px;
   }
 
   .weather-app {
     border: none;
+    background: transparent !important;
   }
 
   .row {
-    margin-left: 0 !important;
+    padding: 0 !important;
+    margin-right: 20px !important;
   }
 
   .container {
     height: 100vh;
+    padding-left: 20px;
   }
 
   .type-city {
-    margin-left: -45px !important;
-    margin-top: -15px !important;
-    margin-right: 25px !important;
-    padding-right: 0px;
-    font-size: 12px;
+    margin-top: 20px !important;
+    margin-right: -40px !important;
+    padding-left: 0px;
+    margin-left: -20px;
   }
 
   .date-hour {
@@ -205,5 +227,46 @@ a:hover {
 
   #date {
     padding-left: 0px;
+  }
+
+  .type-city-input {
+    color: white;
+  }
+
+  .weather-app {
+    padding: 0px;
+    margin-left: -12px;
+  }
+
+  .weather-app-wrapper {
+    padding: 0 !important;
+  }
+
+  .date-hour {
+    font-size: 16px !important;
+    line-height: 18px;
+    font-weight: 400;
+    text-align: right;
+    position: relative;
+    top: 8px;
+  }
+
+  .city-name {
+    font-size: 46px !important;
+    padding: 25px 15px 15px 0 !important;
+  }
+
+  .weather-icon {
+    margin: 0 52px 0 28px;
+  }
+
+  .day-temp {
+    margin-top: -70px !important;
+    margin-bottom: -35px !important;
+    padding: 0px !important;
+  }
+
+  .description {
+    padding-left: 0px !important;
   }
 }
