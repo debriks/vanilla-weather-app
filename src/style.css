@@ -184,8 +184,12 @@ a:hover {
     width: 300px !important;
   }
 
-  .col-md-12 {
-    margin: 0 !important;
+  .col-6 {
+    padding: 0px !important;
+  }
+
+  .col-3 {
+    padding: 0px !important;
   }
 
   .rule {
@@ -221,12 +225,8 @@ a:hover {
     margin-left: -20px;
   }
 
-  .date-hour {
-    padding-left: 0px !important;
-  }
-
   #date {
-    padding-left: 0px;
+    display: none;
   }
 
   .type-city-input {
@@ -257,7 +257,7 @@ a:hover {
   }
 
   .weather-icon {
-    margin: 0 52px 0 28px;
+    margin: -30px 52px 0 28px;
   }
 
   .day-temp {
@@ -268,5 +268,35 @@ a:hover {
 
   .description {
     padding-left: 0px !important;
+    font-size: 28px;
+  }
+
+  .c-f {
+    font-size: 28px;
+    font-weight: 300;
+    position: relative;
+    top: -5px;
+  }
+
+  .extra-datas {
+    font-size: 16px !important;
+    line-height: 22px;
+    font-weight: 400;
+    margin-bottom: 10px !important;
+    margin-top: 20px !important;
+  }
+
+  .forecast-day {
+    font-weight: 500;
+    margin-top: 10px !important;
+  }
+
+  .forecast-icon {
+    width: 35px !important;
+    padding-bottom: 5px;
+  }
+
+  .weather-forecast {
+    margin-left: -10px !important;
   }
 }
