@@ -185,6 +185,10 @@ a:hover {
     width: 300px !important;
   }
 
+  .small-infos p {
+    display: none;
+  }
+
   .col-6 {
     padding: 0px !important;
   }
